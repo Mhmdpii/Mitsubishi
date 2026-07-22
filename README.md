@@ -1,23 +1,71 @@
-# 🚗 Mitsubishi Landing Page
+# Mitsubishi Website
 
-Landing page untuk media promosi penjualan kendaraan Mitsubishi yang menampilkan informasi produk, spesifikasi kendaraan, dan kontak sales melalui WhatsApp.
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
-## ✨ Fitur
+# Mitsubishi Website
 
-- Landing Page Responsif
-- Daftar Produk Mitsubishi
-- Detail Kendaraan
-- Informasi Promo
-- Tombol WhatsApp
-- Informasi Kontak Sales
+Website company profile dan katalog mobil Mitsubishi yang menampilkan informasi produk, spesifikasi, serta halaman detail setiap kendaraan.
 
-## 🛠️ Teknologi
+## Preview
 
-- HTML
-- CSS
+(Tambahkan screenshot website di sini)
+
+## Fitur
+
+- Landing Page
+- Daftar Mobil Mitsubishi
+- Halaman Detail Produk
+- Informasi Dealer
+- Responsive Design
+- Navigasi yang mudah digunakan
+
+## Teknologi
+
+- HTML5
+- CSS3
 - JavaScript
-- Bootstrap
 
-## 👨‍💻 Author
+## Struktur Folder
 
-Luthfi Fauzi
+```
+Mitsubishi/
+│── asset/
+│── mitsubishi/
+│── index.html
+│── style.css
+│── script.js
+│── deskripsi-xforce.html
+│── deskripsi-xpander.html
+│── deskripsi-triton.html
+│── ...
+```
+
+## Cara Menjalankan
+
+1. Clone repository
+
+```bash
+git clone https://github.com/Mhmdpii/Mitsubishi.git
+```
+
+2. Buka folder project
+
+```bash
+cd Mitsubishi
+```
+
+3. Jalankan file `index.html` menggunakan browser.
+
+## Screenshot
+
+Tambahkan beberapa screenshot seperti:
+
+- Halaman Home
+- Halaman Detail Mobil
+- Halaman Dealer
+
+## Author
+
+Muhammad Rafli
