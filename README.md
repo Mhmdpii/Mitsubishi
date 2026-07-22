@@ -1,11 +1,5 @@
 # Mitsubishi Website
 
-![HTML](https://img.shields.io/badge/HTML-orange)
-![CSS](https://img.shields.io/badge/CSS-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
-
-# Mitsubishi Website
-
 Website company profile dan katalog mobil Mitsubishi yang menampilkan informasi produk, spesifikasi, serta halaman detail setiap kendaraan.
 
 ## Preview
@@ -23,9 +17,9 @@ Website company profile dan katalog mobil Mitsubishi yang menampilkan informasi 
 
 ## Teknologi
 
-- HTML5
-- CSS3
-- JavaScript
+![HTML](https://img.shields.io/badge/HTML-orange)
+![CSS](https://img.shields.io/badge/CSS-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
 
 ## Struktur Folder
 
@@ -63,12 +57,15 @@ cd Mitsubishi
 Tambahkan beberapa screenshot seperti:
 
 - Halaman Home
+  
   ![Home](Screenshots/Home.png)
   
 - Halaman Detail Mobil
+  
   ![Detail](Screenshots/DetailMobil.png)
   
 - Halaman Simulasi Kredit
+  
   ![Dealer](Screenshots/SimulasiKredit.png)
 
 ## Author
