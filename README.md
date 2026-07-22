@@ -63,13 +63,13 @@ cd Mitsubishi
 Tambahkan beberapa screenshot seperti:
 
 - Halaman Home
-  ![Home](screenshots/Home.png)
+  ![Home](Screenshots/Home.png)
   
 - Halaman Detail Mobil
-  ![Detail](screenshots/Detailmobil.png)
+  ![Detail](Screenshots/DetailMobil.png)
   
 - Halaman Simulasi Kredit
-  ![Dealer](screenshots/Simulasikredit.png)
+  ![Dealer](Screenshots/SimulasiKredit.png)
 
 ## Author
 
