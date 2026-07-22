@@ -1,0 +1,373 @@
+/* ====== RESET & DASAR ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #5f5b5b61;
+  color: #333;
+  min-height: 100vh;
+  padding-top: 100px; /* Jarak biar konten gak ketutup header */
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  padding: 5px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+header .container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  width: 120px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ff0000;
+}
+
+header .cta {
+  background: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+header .cta:hover {
+  background: #d40000;
+}
+
+/* ====== SECTION DESKRIPSI ====== */
+.deskripsi-mobil {
+  background: #ffffff;
+  max-width: 850px;
+  width: 90%;
+  margin: 0 auto 80px; /* tambah jarak bawah biar lega */
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.deskripsi-mobil h1 {
+  font-size: 2rem;
+  color: #ff0004;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.deskripsi-mobil h2 {
+  font-size: 2rem;
+  color: #ff0004;
+  margin-bottom: 5px;
+  margin-top: 50px; /* ✅ Tambah jarak biar gak nempel teks atas */
+  letter-spacing: 1px;
+}
+
+.deskripsi-mobil h3 {
+  font-size: 20px;
+  color: #111;
+  line-height: 1.0;
+  margin-top: 30px;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.deskripsi-mobil h4 {
+  font-size: 18px;
+  color: #111;
+  line-height: 1.5;
+  margin-top: 30px;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.deskripsi-mobil h5 {
+  font-size: 13px;
+  color: #111;
+  line-height: 1.5;
+  margin-top: 30px;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.deskripsi-mobil img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 25px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deskripsi-mobil img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 30px rgb(53, 46, 46);
+}
+
+.deskripsi-mobil p {
+  font-size: 1.0rem;
+  line-height: 1.8;
+  color: #201f1f;
+  text-align: justify;
+  margin-bottom: 7px;
+}
+
+/* ====== ANIMASI ====== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .deskripsi-mobil {
+    padding: 25px;
+  }
+
+  .deskripsi-mobil h2 {
+    font-size: 1.6rem;
+  }
+
+  .deskripsi-mobil p {
+    font-size: 1rem;
+  }
+}
+
+/* =====================
+   SLIDER GAMBAR TRITON
+===================== */
+.slider-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Titik navigasi (di tengah bawah) */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: red;
+  transform: scale(1.2);
+}
+
+/* ===== SECTION DETAIL HARGA ===== */
+.fitur-section {
+  padding: 60px 5%;
+  background: #fff;
+  text-align: center;
+}
+
+.fitur-section h2 {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.fitur-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fitur-table th {
+  background-color: #000000;
+  color: #fff;
+  padding: 15px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.fitur-table td {
+  padding: 14px;
+  border-bottom: 1px solid #000000;
+  font-size: 1em;
+  color: #333;
+}
+
+.fitur-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.fitur-table tr:hover {
+  background-color: #cccccc;
+  transition: 0.2s;
+}
+
+
+/* ===== WhatsApp Float Button ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 36px;
+  height: 36px;
+}
+
+/* ===== Popup WhatsApp ===== */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-header {
+  background: linear-gradient(90deg, #25D366, #128C7E);
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.popup-header .close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.popup-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.popup-btn:hover {
+  background: #1ebe57;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

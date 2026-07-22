@@ -1,0 +1,1231 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #ff0004;
+}
+
+.cta {
+  background: #ffffff;
+  color: #ff0004;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #ff0004;
+  color: #ffffff;
+}
+
+/* ===== HERO SLIDER ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 80px;
+  background: #000;
+}
+
+
+/* Wrapper slide */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Gambar fade satu per satu */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slides img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slides img.active {
+  opacity: 1;
+}
+
+/* ====== TEXT OVERLAY (judul & tombol) ====== */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  z-index: 3;
+  animation: fadeInText 1.5s ease forwards;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.hero-content a {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hero-content a:hover {
+  background: #ffffff;
+  color: #ff0004;
+}
+
+/* ====== ANIMASI TAMPILAN TEXT ====== */
+@keyframes fadeInText {
+  from {opacity: 0; transform: translate(-50%, -40%);}
+  to {opacity: 1; transform: translate(-50%, -50%);}
+}
+
+/* ====== PANAH NAVIGASI ====== */
+.nav-arrows {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+  padding: 0 40px;
+}
+
+.nav-arrows span {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.nav-arrows span:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ====== INDIKATOR TITIK (PAGINATION) ====== */
+.dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dots span.active {
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-content a {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+/* === TIPE MOBIL SLIDER === */
+/* ======================
+   SECTION: TIPE MOBIL
+====================== */
+.tipeMobil-section {
+  padding: 60px 5%;
+  background: #fff;
+  text-align: center;
+}
+
+.tipeMobil-section h2 {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.tipeMobil-section h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #ff0004; /* ubah dari putih biar kelihatan */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ======================
+   SLIDER MOBIL
+====================== */
+.mobil-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mobil-wrapper {
+  display: flex;
+  gap: 30px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.mobil-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* ======================
+   CARD MOBIL
+====================== */
+.mobil-card {
+  min-width: 250px;
+  background: #f8f8f8;
+  border-radius: 13px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  padding: 15px;
+  
+  /* agar tombol sejajar di bawah */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobil-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobil-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.mobil-card h3 {
+  font-size: 1.1em;
+  color: #111;
+  margin: 15px 0 5px;
+}
+
+/* ======================
+   DESKRIPSI MOBIL
+====================== */
+.mobil-card p {
+  color: #5a5959;
+  font-size: 0.95em;
+  margin: 10px auto 20px;
+  max-width: 230px;        /* batas panjang kotak */
+  text-align: center;
+}
+
+/* ======================
+   TOMBOL DETAIL
+====================== */
+.btn-detail {
+  background-color: #ff0004;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;             /* sebelumnya 60 → tidak valid */
+  transition: background 0.3s;
+  display: inline-block;
+  margin: 0 auto;               /* center tombol */
+}
+
+.btn-detail:hover {
+  background-color: #000000;
+}
+
+/* ======================
+   ARROW SLIDER
+====================== */
+.arrow {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: rgb(25, 25, 25);
+}
+
+.arrow.left {
+  left: 5px;
+}
+
+.arrow.right {
+  right: 5px;
+}
+
+/* ===== BERITA SECTION ===== */
+.promo-section {
+  padding: 100px 8px;
+  background: url("asset/bg_promo.jpg") center center no-repeat fixed;
+  background-size: 100%; /* Ubah persentase sesuai kebutuhan, bisa 30%, 50%, dst */
+  text-align: left;
+  color: #4c4a4a;
+  position: relative;
+}
+
+.promo-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ff0000;
+  text-align: center;
+  text-transform: bold;
+  font-weight: 700;
+}
+
+/* GRID BERITA */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.news-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgb(0, 0, 0);
+}
+
+.news-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.news-info {
+  padding: 18px;
+}
+
+.news-date {
+  font-size: 13px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  color: #111;
+  line-height: 1.5;
+  transition: color 0.3s;
+}
+
+.news-card:hover h3 {
+  color: #ff0004;
+}
+
+/* ===== MODAL BERITA ===== */
+.news-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.modal-date {
+  color: #3d3b3b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  float: right;
+  font-size: 30px;
+  font-weight: normal;
+  color: #ff0004;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000000;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px 20px;
+  }
+
+  .news-card img {
+    height: 180px;
+  }
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  /* Gunakan 2 background: gambar di kiri + warna di kanan */
+  background:
+    url('asset/AllNewTriton.jpg') left center / 80% auto no-repeat,  /* GANTI dengan gambar kamu */
+    linear-gradient(to right, #707070 45%, #16171a 65%);
+  color: #fff;
+  background-blend-mode: normal;
+}
+
+/*CSS DALAM BERITA FITUR LAYAR*/
+.fitur-section {
+  padding: 20px 20px;
+  background: #fff;
+  text-align: left;
+}
+
+.fitur-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.fitur-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fitur-table th {
+  text-align: left;
+  padding: 12px 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #1d2731;
+}
+
+.fitur-table td {
+  padding: 15px;
+  vertical-align: top;
+  color: #2b2b2b;
+}
+
+.fitur-table tr:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.fitur-table ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #3a3a3a;
+}
+
+.fitur-table li {
+  margin-bottom: 8px;
+}
+
+/* Bentuk bawah miring (kerucut) */
+.contact-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: #ff0606a1;
+  clip-path: polygon(0 60%, 50% 100%, 100% 60%, 100% 100%, 0 100%);
+}
+
+/* Kontainer utama */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 8% 120px;
+}
+
+/* BAGIAN KIRI (BENAR-BENAR TRANSPARAN) */
+.contact-info {
+  flex: 1;
+  min-width: 320px;
+  background: none; /* hilangkan background sepenuhnya */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: none; /* hapus bayangan */
+  backdrop-filter: none; /* hapus efek blur */
+}
+
+/* Hapus overlay juga */
+.contact-info .overlay {
+  background: none;
+  padding: 40px;
+  height: 100%;
+}
+
+.contact-info h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.contact-info h3 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.contact-info .sales-role {
+  font-size: 18px;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.contact-info .phone a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info .phone a:hover {
+  color: #ffcc00;
+}
+
+.contact-info h4 {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #ffcc00;
+}
+
+.contact-info .address,
+.contact-info .email {
+  line-height: 1.6;
+  font-size: 17px;
+  color: #fff;
+}
+
+/* BAGIAN KANAN (MAP) */
+.contact-map {
+  flex: 1.3;
+  min-width: 350px;
+  background: #413c3c65;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.contact-map iframe {
+  width: 150%;
+  height: 150%;
+  min-height: 100px;
+  border: 0;
+}
+
+/* ===== WHATSAPP FLOAT BUTTON ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+/* ===== POPUP BOX ===== */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+.popup-header {
+  background-color: #25D366;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup-header .close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popup-body {
+  padding: 15px;
+  text-align: center;
+}
+.popup-body p {
+  margin-bottom: 15px;
+  color: #333;
+}
+.popup-btn {
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+.popup-btn:hover {
+  background-color: #1ebe5d;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Footer Section ===== */
+.main-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 60px 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* === Bagian Sosial Media === */
+.footer-social {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-social h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon i {
+  font-size: 2.5rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Hover efek berwarna */
+.social-icon.instagram:hover i { color: #e1306c; transform: scale(1.2); }
+.social-icon.youtube:hover i { color: #ff0000; transform: scale(1.2); }
+.social-icon.email:hover i { color: #0062ff; transform: scale(1.2); }
+
+/* === Bagian Tinggalkan Pesan === */
+.footer-message {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-message h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer-message form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 🌟 Lebih terang dari sebelumnya */
+.footer-message input,
+.footer-message textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff; /* sebelumnya #111 */
+  color: #000000;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.footer-message input::placeholder,
+.footer-message textarea::placeholder {
+  color: #bbb;
+}
+
+.footer-message button {
+  align-self: flex-start;
+  background-color: #ab0609;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.footer-message button:hover {
+  background-color: #000000;
+}
+
+/* === Garis Footer === */
+.footer-line {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 25px 0 15px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* === Bagian Bawah Footer === */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  color: #bbb;
+}
+
+.footer-message input,
+.footer-message textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a; /* sedikit lebih terang */
+  color: #fff;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+/* === SIMULASI KREDIT SECTION === */
+.simulasi-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("asset/bg_simulasi.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === FORM SIMULASI === */
+.simulasi-container {
+  background: rgba(30, 30, 30, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 35px;
+  max-width: 550px;
+  width: 100%;
+  color: #eee;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* === JUDUL === */
+.simulasi-container h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  color: #ffb703;
+}
+
+/* === FORM INPUT === */
+.simulasi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.simulasi-form label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #eee;
+}
+
+/* === INPUT DAN SELECT STYLE === */
+.simulasi-form input,
+.simulasi-form select {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #000; /* teks hitam agar terbaca */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* === KHUSUS UNTUK KOLOM NO. HP === */
+.simulasi-form input[type="tel"],
+.simulasi-form input[name="no_hp"] {
+  background-color: #fff;
+  color: #000; /* teks hitam */
+}
+
+/* === AGAR TEKS DI DALAM DROPDOWN JUGA JELAS === */
+.simulasi-form select option {
+  color: #000; /* teks hitam di dropdown */
+  background-color: #fff;
+}
+
+/* === EFEK SAAT FOKUS === */
+.simulasi-form input:focus,
+.simulasi-form select:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+}
+
+/* === PLACEHOLDER === */
+.simulasi-form input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* === BUTTON GROUP === */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+#hitungBtn {
+  background: #e63946;
+  color: #fff;
+}
+#hitungBtn:hover {
+  background: #c9184a;
+  transform: translateY(-2px);
+}
+
+#kirimBtn {
+  background: #457b9d;
+  color: #fff;
+}
+#kirimBtn:hover {
+  background: #1d3557;
+  transform: translateY(-2px);
+}
+
+#resetBtn {
+  background: #999;
+  color: #fff;
+}
+#resetBtn:hover {
+  background: #666;
+  transform: translateY(-2px);
+}
+
+/* === HASIL SIMULASI === */
+.hasil-box {
+  margin-top: 25px;
+}
+
+.hasil-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 18px;
+  line-height: 1.7;
+  color: #fff;
+  animation: fadeIn 0.6s ease;
+}
+
+.hasil-card h4 {
+  color: #ffb703;
+  margin-bottom: 12px;
+}
+
+/* === ANIMASI === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .simulasi-container {
+    padding: 25px 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .simulasi-container h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* SECTION TESTIMONI */
+.testimoni-section {
+  padding: 150px 2px;
+  background: url("asset/Mitsubishi-Motors-Training.jpg") center center no-repeat fixed;
+  background-size: 100%; /* Ubah persentase sesuai kebutuhan, bisa 30%, 50%, dst */
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+
+.testimoni-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+.testimoni-section h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #ff0004;
+  letter-spacing: 1px;
+}
+
+.testimoni-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimoni-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 25px;
+  max-width: 290px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 0, 0, 0.808);
+}
+
+.testimoni-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 80%;
+  margin-bottom: 20px;
+  border: 5px solid #ff0202;
+  object-fit: cover;
+}
+
+.testimoni-card p {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.testimoni-card h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff0004;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimoni-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== DEALER SECTION ===== */
+.dealer-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  background-color: #1b1b1b;
+  color: #ffffff;
+  gap: 60px;
+}
+
+.dealer-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.dealer-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dealer-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgb(255, 0, 0);
+}
+
+.dealer-text {
+  flex: 1;
+  min-width: 320px;
+  max-width: 550px;
+  line-height: 1.8;
+}
+
+.dealer-text h2 {
+  color: #ff0004;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.dealer-text p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.dealer-text strong {
+  color: #ff0004;
+}
+
+/* Tombol kontak */
+.dealer-contact {
+  display: inline-block;
+  background-color: #ff0004;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dealer-contact:hover {
+  background-color: #ff0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dealer-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .dealer-text h2 {
+    font-size: 1.8rem;
+  }
+}

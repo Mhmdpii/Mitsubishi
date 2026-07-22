@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitsubishi Bekasi</title>
+  <style>
+    /* Reset & Styling dasar */
+    body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; background-color: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      background-color: #d7282a;
+    }
+    .logo img { height: 50px; }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      font-weight: 600;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .cta {
+      background-color: #fff;
+      color: #d7282a;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slider .carousel {
+      display: flex;
+      transition: transform 1s ease;
+    }
+    .slider .carousel img {
+      width: 100%;
+    }
+    .slider .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    /* Tanda navigasi */
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .nav-arrows a {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="asset/logomitsubishi.png" alt="Mitsubishi Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Model</a></li>
+        <li><a href="#">Harga</a></li>
+        <li><a href="#">Promo</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="cta">Cari Dealer</a>
+  </header>
+
+  <!-- SLIDER -->
+  <section class="slider">
+    <div class="carousel">
+      <img src="asset/destinator.jpg" alt="Destinator">
+      <img src="asset/AllNewTriton.jpg" alt="Triton">
+      <img src="asset/baground mitsubishi.jpg" alt="Background Mitsubishi">
+    </div>
+    <div class="caption">Grand Destinations Await</div>
+    <div class="nav-arrows">
+      <a href="#" class="prev">&lt;</a>
+      <a href="#" class="next">&gt;</a>
+    </div>
+  </section>
+
+  <script>
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel img');
+    let index = 0;
+
+    function showSlide() {
+      const totalSlides = slides.length;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      showSlide();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide();
+    });
+
+    // Auto slide
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide();
+    }, 4000);
+  </script>
+</body>
+</html>
