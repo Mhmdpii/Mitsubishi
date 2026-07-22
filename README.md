@@ -17,9 +17,11 @@ Website company profile dan katalog mobil Mitsubishi yang menampilkan informasi 
 
 ## Teknologi
 
-![HTML](https://img.shields.io/badge/HTML-orange)
-![CSS](https://img.shields.io/badge/CSS-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
+-![HTML](https://img.shields.io/badge/HTML-orange)
+
+-![CSS](https://img.shields.io/badge/CSS-blue)
+
+-![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
 
 ## Struktur Folder
 
